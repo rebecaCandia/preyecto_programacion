@@ -18,11 +18,11 @@ return new class extends Migration
             $table->integer('stock');
             $table->string('Descripcion', 100)->nullable();
             $table->foreignId('CategoriaID')
-            ->constrained('categorias')
-            ->onDelete('cascade'); 
+                ->constrained('categorias', 'CategoriaID')
+                ->onDelete('cascade');
             $table->foreignId('ProveedorID')
-            ->constrained('proveedors')
-            ->onDelete('cascade'); 
+                ->constrained('proveedors', 'ProveedorID')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

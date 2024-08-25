@@ -9,14 +9,14 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
+    public function up(): void{     
         Schema::create('proveedors', function (Blueprint $table) {
             $table->id('ProveedorID');
             $table->string('Nombre', 100);
-            $table->string('Telefono', 20)->nullable();
+            $table->string('Telefono', 20); // Ajusta el tamaño según sea necesario
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('proveedors');
+        Schema::dropIfExists('categorias');
     }
 };
