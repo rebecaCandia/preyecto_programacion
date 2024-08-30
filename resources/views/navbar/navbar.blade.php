@@ -1,5 +1,5 @@
 <header>
-<nav class="navbar navbar-expand-lg navbar-custom" style="background-color: #343a40;">
+<nav class="navbar navbar-expand-lg navbar-custom" style="background-color: #1120eb;">
     <a class="navbar-brand" href="{{ url ('/')}}">
         <span style="color: #f8f9fa;">C.A.</span>
     </a>
@@ -9,10 +9,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ url ('/') }}" style="color: #f8f9fa;">HOME</a>
+                <a class="nav-link active" aria-current="page" href="{{ url ('#') }}" style="color: #f8f9fa;">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url ('/') }}" style="color: #815f0a;">INICIO</a>
+                <a class="nav-link" href="{{ url ('#') }}" style="color: #eeeeee;">INICIO</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url ('/productos') }}" style="color: #f8f9fa;">PRODUCTOS</a>
@@ -20,6 +20,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url ('/cliente') }}" style="color: #f8f9fa;">CLIENTES</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url ('/categorias') }}" style="color: #f8f9fa;">CATEGORIAS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url ('/proveedores') }}" style="color: #f8f9fa;">PROVEEDOR</a>
+            </li>
+            <a class="nav-link" href="{{ url('logout') }}" style="color: #f8f9fa;">SALIR</a>
         </ul>
         <div class="dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="color: #f8f9fa;">
@@ -28,7 +35,7 @@
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
                 <li><a class="dropdown-item" href="#">Perfil</a></li>
                 <li><a class="dropdown-item" href="#">Ajustes</a></li>
-                <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                <li><a class="dropdown-item"href="{{ url('logout') }}">Cerrar sesión</a></li>
             </ul>
         </div>
     </div>
@@ -39,7 +46,7 @@
 <style>
 
     .navbar-custom {
-        background: linear-gradient(90deg, #460743 0%, #d376ce 100%);
+        background: #060d72;
         border-bottom: 2px solid #ffffff;
     }
 

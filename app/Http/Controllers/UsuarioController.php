@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class UsuarioController extends Controller
@@ -29,8 +29,13 @@ class UsuarioController extends Controller
         ]);
         return view('usuario.usuario');
     }
-    public function logout(){
+    public function logout(Request $request){
+        Auth::logout();
 
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('login');
     }
 
 
