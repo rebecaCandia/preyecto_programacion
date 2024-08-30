@@ -21,8 +21,8 @@
                         </div>
                         <div class="form-group d-flex justify-content-between align-items-center mt-4">
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="rememberMe">
-                                <label class="form-check-label" for="rememberMe">Recordarme</label>
+                                <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                                <label class="form-check-label" for="remember">Recordarme</label>
                             </div>
                             <a href="#" class="small">¿Olvidaste tu contraseña?</a>
                         </div>

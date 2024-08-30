@@ -10,26 +10,34 @@ class UsuarioController extends Controller
     {
         return view('usuario.usuario');
     }
+
     public function login(Request $request)
     {
+        
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
+        
         $credentials = $request->only('email', 'password');
+        $remember = $request->has('remember');
 
-        if (Auth::attempt($credentials)) {
+       
+        if (Auth::attempt($credentials, $remember)) {
+           
             $request->session()->regenerate();
-            return redirect()->route('inicio'); // O cualquier ruta protegida
+            return redirect()->route('inicio'); 
         }
 
+        
         return back()->withErrors([
             'email' => 'Las credenciales no coinciden con nuestros registros.',
         ]);
-        return view('usuario.usuario');
     }
-    public function logout(Request $request){
+
+    public function logout(Request $request)
+    {
         Auth::logout();
 
         $request->session()->invalidate();
@@ -37,6 +45,4 @@ class UsuarioController extends Controller
 
         return redirect('login');
     }
-
-
 }
